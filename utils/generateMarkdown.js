@@ -1,113 +1,113 @@
 // function to generate markdown for README
 function generateMarkdown(userResponses) {
 
-    // Generate Table of Contents
-    let tableCont = `## Table of Contents`;
+  // Generate Table of Contents
+  let tableCont = `## Table of Contents`;
   
-    if (userResponses.installation !== '') { tableCont += `
-    * [Installation](#installation)` };
+  if (userResponses.installation !== '') { tableCont += `
+  * [Installation](#installation)` };
   
-    if (userResponses.usage !== '') { tableCont += `
-    * [Usage](#usage)` };
+  if (userResponses.usage !== '') { tableCont += `
+  * [Usage](#usage)` };
   
-    if (userResponses.contributing !== '') { tableCont += `
-    * [Contributing](#contributing)` };
+  if (userResponses.contributing !== '') { tableCont += `
+  * [Contributing](#contributing)` };
   
-    if (userResponses.tests !== '') { tableCont += `
-    * [Tests](#tests)` };
+  if (userResponses.tests !== '') { tableCont += `
+  * [Tests](#tests)` };
   
-    if (userResponses.license !== '') { tableCont += `
-    * [License](#license)` };
+  if (userResponses.license !== '') { tableCont += `
+  * [License](#license)` };
    
-    let genMarkdown = 
-    `# ${userResponses.title}
+  let genMarkdown = 
+  `# ${userResponses.title}
     
-    ## Description 
+  ## Description 
     
-    ${userResponses.description}
-    `
+  ${userResponses.description}
+  `
   
-    // Add Table of Contents to markdown
-    genMarkdown += tableCont;
+  // Add Table of Contents to markdown
+  genMarkdown += tableCont;
    
-    //Installation section
-    if (userResponses.installation !== '') {
+  //Installation section
+  if (userResponses.installation !== '') {
     
-    genMarkdown +=
-    `
-    ## Installation
+  genMarkdown +=
+  `
+  ## Installation
     
-    ${userResponses.installation}
-    `
-    };
+  ${userResponses.installation}
+  `
+  };
     
-    //Usage section
-    if (userResponses.usage !== '') {
+  //Usage section
+  if (userResponses.usage !== '') {
     
-    genMarkdown +=
-    `
-    ## Usage 
+  genMarkdown +=
+  `
+  ## Usage 
     
-    ${userResponses.usage}`
-    };
+  ${userResponses.usage}`
+  };
     
-    //Contributing section
-    if (userResponses.contributing !== '') {
+  //Contributing section
+  if (userResponses.contributing !== '') {
   
-    genMarkdown +=
-    `
+  genMarkdown +=
+  `
     
-    ## Contributing
+  ## Contributing
     
-    ${userResponses.contributing}`
-    };
+  ${userResponses.contributing}`
+  };
   
-    //Tests section
-    if (userResponses.tests !== '') {
+  //Tests section
+  if (userResponses.tests !== '') {
     
-    genMarkdown +=
-    `
+  genMarkdown +=
+  `
     
-    ## Tests
+  ## Tests
     
-    ${userResponses.tests}`
-    };
+  ${userResponses.tests}`
+  };
   
-    // License section
-    genMarkdown +=
-    `
+  // License section
+  genMarkdown +=
+  `
     
-    ## License
+  ## License
     
-    ${userResponses.license}
-    `;
+  ${userResponses.license}
+  `;
   
-    // Questions section
-    let devInfo = 
-    `
-    ---
+   // Questions section
+  let devInfo = 
+  `
+  ---
     
-    ## Questions?
-    Questions? please contact me:
+  ## Questions?
+  Questions? please contact me:
    
-    GitHub: [${userResponses.username}](https://github.com/${userResponses.username})
-    `;
+  GitHub: [${userResponses.username}](https://github.com/${userResponses.username})
+  `;
   
-    // If email is not null, add to Question section
-    if (userResponses.email !== null) {
+  // If email is not null, add to Question section
+  if (userResponses.email !== null) {
     
-      devInfo +=
-    `
-    Email: ${userResponses.email}
-    `};
+    devInfo +=
+  `
+  Email: ${userResponses.email}
+  `};
   
-    // Add Question section to markdown
-    genMarkdown += devInfo;
+  // Add Question section to markdown
+  genMarkdown += devInfo;
   
-    // Generate markdown
-    return genMarkdown;
+  // Generate markdown
+  return genMarkdown;
     
-  }
+}
   
   module.exports = generateMarkdown;
   
